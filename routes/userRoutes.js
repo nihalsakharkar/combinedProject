@@ -34,6 +34,7 @@ router.delete('/delete/:id',userController.deleteUser);
 
 router.get('/getStatus', attendanceModel.getStatus)
 
+router.get('/getAttendance/:date',attendanceModel.showdata)
 module.exports = router;
 
 
