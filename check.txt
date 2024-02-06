@@ -1,0 +1,26 @@
+const createUser = async function (req, res) {
+    try {
+      const nextid = await getNextId();
+      const { id,name, email, number, date, role, link } = req.body;
+      const photo = req.files['photo'][0].filename;
+      const resume = req.files['resume'][0].filename;
+      const identityProof = req.files['identityProof'][0].filename;
+      const addressProof = req.files['addressProof'][0].filename;
+  
+      const newUser = new userModel({ id:nextid,name, email, number, date, role, link, photo, resume, identityProof, addressProof });
+      const savedUser = await newUser.save();
+      
+      res.json(savedUser);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+}
+
+
+   
+
+    // Find the user by name
+    const user = await userModel.findOne({ name });
+    if (!user) {
+      return res.status(404).json({ error: 'User not found' });
+    }

@@ -1,0 +1,39 @@
+<!-- attendanceTable.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Table</title>
+</head>
+<body>
+
+  <h2>Attendance Table</h2>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Date</th>
+        <th>inTime</th>
+        <th>outTime</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.date %></td>
+          <td><%= user.inTime %></td>
+          <td><%= user.outTime %></td>
+          
+          
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+</body>
+</html>

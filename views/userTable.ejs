@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Table</title>
+</head>
+<body>
+
+  <h2>User Table</h2>
+ 
+  
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>RAK Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Number</th>
+        <th>Date</th>
+        <th>Role</th>
+        <th>Link</th>
+        <th>Photo</th>
+        <th>Resume</th>
+        <th>Identity Proof</th>
+        <th>Address Proof</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.number %></td>
+          <td><%= user.date %></td>
+          <td><%= user.role %></td>
+          <td><%= user.link %></td>
+          <td><%= user.photo %></td>
+          <td><%= user.resume %></td>
+          <td><%= user.identityProof %></td>
+          <td><%= user.addressProof %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+
+</body>
+</html>
